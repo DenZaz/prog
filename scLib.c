@@ -7,7 +7,7 @@ int sc_memoryInit() {
 	for (i = 0; i < MEM_COUNT; i++)
 		memArr[i] = 0;
 
-	int tempArr[] = { 10, 11, 20, 21, 30, 31, 32, 33, 40, 41, 42, 43, 51};
+	int tempArr[] = { 10, 11, 20, 21, 30, 31, 32, 33, 40, 41, 42, 43, 51, 56};
 
 	memcpy(comArr, tempArr, (sizeof(tempArr)));
 

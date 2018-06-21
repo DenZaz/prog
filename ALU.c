@@ -44,6 +44,24 @@ int alu(int command, int operand)
 			invers=~accumValue & 0b1111111111111111;
 			sc_memorySet(operand, invers);
 			break;
+		/*	case 56:
+            sc_regGet(F_BOUNDS,&value);
+             if (sc_memoryGet (operand, &value) == 0) 
+              {
+            accumValue += value;
+            if (accumValue > 0x7FFF)
+           {
+            accumValue &= 0X7FFF;
+                 sc_regSet (F_BOUNDS, 1);
+           }      
+}
+break;*/
+
+    case 56:
+	sc_regGet(F_BOUNDS,&value);
+if(value & F_BOUNDS){memoryPointer = operand;}
+				else{sc_regSet(F_WRONG_COM, 1);}
+				break;
 
 		
 		default:
